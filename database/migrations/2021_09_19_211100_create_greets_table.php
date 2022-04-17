@@ -15,9 +15,9 @@ class CreateGreetsTable extends Migration
     {
         Schema::create('greets', function (Blueprint $table) {
             $table->id();
+            $table->text('slug');
             $table->string('position');
             $table->string('name');
-            $table->string('slug');
             $table->string('img');
             $table->text('greeting');
             $table->timestamps();

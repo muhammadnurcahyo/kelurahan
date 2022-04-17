@@ -10,7 +10,7 @@ class Blog extends Model
     use HasFactory;
 
     /**
-     * Get the category that owns the Blog
+     * Get the category that owns the Blog.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

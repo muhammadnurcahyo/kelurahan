@@ -12,10 +12,10 @@
                                     <li class="breadcrumb-item"><a href="{{URL::to('admin')}}">Dashboard</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         @if(empty($data))
-                                        Tambah 
+                                        Tambah
                                         @else
-                                        Edit 
-                                        @endif  
+                                        Edit
+                                        @endif
                                         Informasi</li>
                                 </ol>
                             </nav>
@@ -32,12 +32,12 @@
                                 <form action="" enctype="multipart/form-data" method="post">
                                     {{csrf_field()}}
                                     @if(empty($data))
-                                    
+
                                     @else
                                     <input type="hidden" name="_method" value="put">
-                                    @endif                 
+                                    @endif
                                     <div class="row">
-                                        <div class="col-sm-12">   
+                                        <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="roundText">Judul</label>
                                                 <input name="title" type="text" id="roundText" value="{{$data->title ?? ''}}" class="form-control round"
@@ -48,28 +48,28 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-12">   
+                                        <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="roundText">kategori</label>
                                                 <select name="category" class="form-control">
 
                                                     @if(empty($data))
-                                                    @foreach($category as $k)
-                                                    <option value="{{$k->id}}">{{$k->category}}</option>
-                                                    @endforeach
+                                                        @foreach($category as $k)
+                                                        <option value="{{$k->id}}">{{$k->name}}</option>
+                                                        @endforeach
                                                     @else
-                                                    @foreach($category as $k)
-                                                    @if($k->id == $data->category)
-                                                    <option selected value="{{$k->id}}">{{$k->category}}</option>
-                                                    @else
-                                                    <option value="{{$k->id}}">{{$k->category}}</option>
+                                                        @foreach($category as $k)
+                                                        @if($k->id == $data->category->id)
+                                                        <option selected value="{{$k->id}}">{{$k->name}}</option>
+                                                        @else
+                                                        <option value="{{$k->id}}">{{$k->name}}</option>
 
-                                                    @endif
+                                                        @endif
                                                     @endforeach
                                                     @endif
 
                                                 </select>
-                                                    
+
                                                     @if ($errors->has('category'))
                                                     <div class="mt-2 alert alert-danger">{{ $errors->first('title') }}</div>
                                                     @endif
@@ -88,7 +88,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         @if(empty($data))
                                         @else
                                         <div class="row">
@@ -111,13 +111,13 @@
                                                 <input type="file" name="img" class="form-control">
                                                 @if ($errors->has('img'))
                                                 <div class="mt-2 alert alert-danger">{{ $errors->first('img') }}</div>
-                                                
+
                                                 @endif
                                                 <small style="font-weight: bold; font-style:italic;">*Max ukuran foto 500Kb -> <a href=""> <span style="color: blueviolet;">Compress</span></a>  </small> <br>
                                             </div>
                                         </div>
                                         <div class="card-header">
-                                            
+
                                                 <button type="submit" class="btn btn-primary">
                                                     @if(empty($data))
                                                     Tambah
@@ -125,7 +125,7 @@
                                                     Edit
                                                     @endif
                                                 </button>
-                                            
+
                                         </div>
                                     </div>
                                 </div>

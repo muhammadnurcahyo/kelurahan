@@ -29,7 +29,7 @@
                                         <h3 class="white"> Berita Terbaru </h3>
                                     </div>
                                     <div class="widget-popular-post-main">
-                                        
+
                                         @foreach ($latest as $d)
                                             <div class="widget-posts" style="margin-bottom: 12px;">
                                                 <div class="post-thumb">
@@ -37,13 +37,13 @@
                                                         style="height:90px; width: 90px;">
                                                 </div>
                                                 <div class="post-title">
-                                                    <h5><a href="{{URL::to('berita').'/'.$d->id}}">{{$d->title}}</a></h5>
+                                                    <h5><a href="{{route('blog.show',$d->slug) }}">{{$d->title}}</a></h5>
                                                     <p style="margin-top: -10px; font-size: 13px;">{{date('d-M-Y', strtotime($d->created_at));}}</p>
                                                 </div>
                                             </div>
                                         @endforeach
 
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                 <div class="widget-category-main">
                                     <ul class="widget-category-list">
                                         @foreach($categories as $c)
-                                        <li><a href="{{URL::to('/kategori').'/'.$c->slug}}">{{$c->category}}</a></li>
+                                        <li><a href="{{route('kategori',$c->slug)}}">{{$c->name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -70,8 +70,8 @@
                                 <div class="widget-category-main">
                                     <ul class="widget-category-list">
                                         @foreach($product as $c)
-                                        <li><a href="{{URL::to('/kategori/').'/'.$c->slug}}">{{$c->category}}</a></li>
-                                        @endforeach  
+                                        <li><a href="{{route('kategori',$c->slug)}}">{{$c->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

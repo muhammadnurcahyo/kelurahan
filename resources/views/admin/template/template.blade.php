@@ -60,7 +60,7 @@
                                 <li class="submenu-item {{ Request::segment(2)==='categoriess' ? 'active' : '' }} ">
                                     <a href="{{URL::to('/admin/categories')}}">Kategori Berita</a>
                                 </li>
-                                
+
 
                             </ul>
                         </li>
@@ -118,7 +118,7 @@
                                 border-radius: 50%;
                                 @if(Session::get('unread')==0)
                                 display:none;
-                                @endif                              
+                                @endif
                                 color: #fff;">{{ Session::get('unread' )}}</span>
                                 <span>pesan masuk</span>
                             </a>
@@ -187,22 +187,22 @@
             tinymce.init({ selector: '#default' });
             tinymce.init({ selector: '#dark', toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent code image', plugins: 'code image' });
 
-          
+
         </script>
 
         <script src="{{asset('assets/js/main.js')}}"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script>
-    
 
-  
+
+
     var msg = '{{Session::get('success')}}';
     var err = '{{Session::get('failed')}}';
-    
+
     var success = '{{Session::has('success')}}';
     var alert = '{{Session::has('failed')}}';
-    
-   
+
+
     if(success){
         Toastify({
                     text: msg,
@@ -210,7 +210,7 @@
                     backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
                 }).showToast();
     }
-    
+
     if(alert){
         Toastify({
                     text: err,
@@ -220,7 +220,9 @@
     }
 
     let table1 = document.querySelector('#table1');
-        let dataTable = new simpleDatatables.DataTable(table1);
+        let dataTable = new simpleDatatables.DataTable(table1,{
+            "paging": false,
+        });
 
 
     $('form #btn-delete').on('click',function(e){

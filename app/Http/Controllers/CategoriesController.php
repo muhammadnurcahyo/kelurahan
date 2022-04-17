@@ -2,65 +2,81 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Http\Request;
+
 class CategoriesController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->getNotifMessage();
     }
-    public function index(){
+
+    public function index()
+    {
         $data = Category::paginate(10);
-        return view('admin.category',compact('data'));
 
+        return view('admin.category', compact('data'));
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $deletedRows = Category::where('id', $id)->delete();
-        return back()->with('success', 'data berhasil dihapus');        
+
+        return back()->with('success', 'data berhasil dihapus');
     }
 
-    public function create(){
+    public function create()
+    {
         $kind = ['produk', 'lainya'];
-        return view('admin.add-category',compact('kind'));
+
+        return view('admin.add-category', compact('kind'));
     }
 
-    public function update($id){
+    public function update($id)
+    {
         $data = Category::find($id);
         $kind = ['produk', 'lainya'];
-        return view('admin.add-category', compact('data','kind'));
+
+        return view('admin.add-category', compact('data', 'kind'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
-            'category'      => 'required',
-            'kind'      => 'required'
+            'name' => 'required',
+            'kind' => 'required',
         ]);
-        $data = $request->except('_token');
-        $post = array("slug"=>str_slug($data['category']), "category"=>$data['category'], "kind"=>$data['kind']);
-        $info = Category::create($post);
-        if(!is_null($info)){
-            return back()->with('success','Success! data berhasil ditambahkan');
-        }else{
-            return back()->with('failed','Alert! terjadi kesalahan');
+
+        try {
+            $category = new Category();
+            $category->name = $request->name;
+            $category->slug = str_slug($request->name);
+            $category->kind = $request->kind;
+            $category->save();
+
+            return back()->with('success', 'Success! data berhasil ditambahkan');
+        } catch (\Throwable $th) {
+            return back()->with('failed', 'Alert! terjadi kesalahan');
         }
-}
+    }
 
-    public function edit(Request $request,$id){
-        $info = Category::find($id);
-        
+    public function edit(Request $request, $id)
+    {
         $request->validate([
-            'category'      => 'required',
-            'kind'      => 'required'
+            'name' => 'required',
+            'kind' => 'required',
         ]);
-        $data = $request->except('_token');
-        $post = array("slug"=>str_slug($data['category']), "category"=>$data['category'],"kind"=>$data['kind']);
-        $hasil = $info->update($post);
+        try {
+            $category = Category::where(['id' => $id])->first();
+            $category->name = $request->name;
+            $category->slug = str_slug($request->name);
+            $category->kind = $request->kind;
+            $category->save();
 
-        if(!is_null($hasil)) {
-            return back()->with('success','Success! data berhasil ditambahkan');
-        }else{
-            return back()->with('failed','Alert! terjadi kesalahan');
+            return back()->with('success', 'Success! data berhasil ditambahkan');
+        } catch (\Throwable $th) {
+            return back()->with('failed', 'Alert! terjadi kesalahan');
         }
     }
 }

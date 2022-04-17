@@ -21,20 +21,20 @@
                                     </div>
                                     <div class="post-content" style="text-align: left;">
                                         <h2 class="entry-title">
-                                            <a href="{{URL::to('berita').'/'.$b->id}}" class="judul">{{$b->title}}</a>
+                                            <a href="{{route('blog.show',$b->slug) }}" class="judul">{{$b->title}}</a>
                                         </h2>
-    
+
                                         <div class="post-date" style="margin-top: -10px;">
                                             <p><a href="#" style="color: rgb(141, 108, 108); font-size: 13px;">{{date('d-M-Y', strtotime($b->created_at));}}</a></p>
                                         </div>
-    
+
                                         <div class="desc">
                                             <p style="text-align: justify;">{{Str::limit(strip_tags($b->desc),90,$end='...')}}</p>
-    
+
                                         </div>
                                         <small>
                                             <div class="mouse">
-                                            <a href="{{URL::to('kategori').'/'.$b->slug}}">{{$b->category}}</a>
+                                            <a href="{{route('kategori',$b->category->slug)}}">{{$b->category->name}}</a>
                                             </div>
                                         </small>
                                     </div>
@@ -43,8 +43,8 @@
                                 <p>Artikel yang anda inginkan tidak tersedia</p>
                                 @endforelse
 
-                                
-                               
+
+
                             </div>
 
                 </div>
@@ -60,9 +60,9 @@
                                         <h3 class="white"> Berita Terbaru </h3>
                                     </div>
                                     <div class="widget-popular-post-main">
-                                        
 
-                                       
+
+
                                         @foreach ($latest as $d)
                                             <div class="widget-posts" style="margin-bottom: 12px;">
                                                 <div class="post-thumb">
@@ -70,7 +70,7 @@
                                                         style="height:90px; width: 90px;">
                                                 </div>
                                                 <div class="post-title">
-                                                    <h5><a href="{{URL::to('berita').'/'.$d->id}}">{{$d->title}}</a></h5>
+                                                    <h5><a href="{{route('blog.show',$d->slug) }}">{{$d->title}}</a></h5>
                                                     <p style="margin-top: -10px; font-size: 13px;">{{date('d-M-Y', strtotime($d->created_at));}}</p>
                                                 </div>
                                             </div>
@@ -87,8 +87,8 @@
                                 <div class="widget-category-main">
                                     <ul class="widget-category-list">
                                     @foreach($categories as $c)
-                                    <li><a href="{{URL::to('/kategori').'/'.$c->slug}}">{{$c->category}}</a></li>
-                                    @endforeach 
+                                    <li><a href="{{route('kategori',$c->slug)}}">{{$c->name}}</a></li>
+                                    @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                     <ul class="widget-category-list">
                                         @foreach($product as $c)
                                         <li><a href="sampah.html">{{$c->category}}</a></li>
-                                        @endforeach     
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

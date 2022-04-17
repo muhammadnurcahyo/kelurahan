@@ -49,7 +49,7 @@
                                             {{$d->title}}
                                         </td>
                                         <td>
-                                            {{$d->category->category}}
+                                            {{$d->category->name}}
                                         </td>
                                         <td>
                                            {{date('d-M-Y', strtotime($d->created_at));}}
@@ -81,7 +81,24 @@
                                 </tbody>
 
                             </table>
-                            {{ $data ?? ''->links('pagination::bootstrap-4') }}
+                            <div class="d-flex justify-content-between">
+                                <p class="d-none d-sm-inline-block m-0 text-muted ">
+                                    Showing {{ ( $data->currentpage()-1)*$data->perpage()+1}} to {{ $data->currentpage()*$data->perpage() }} from {{ $data->total() }}record
+
+                                </p>
+                                @if (!empty ($data->links()))
+                                    @if (!empty($filter))
+                                    <nav class="m-0">
+                                        {!! $data->appends($filter)->links() !!}
+                                    </nav>
+                                    @else
+                                    <nav class="m-0">
+                                        {!! $data->links() !!}
+                                    </nav>
+                                    @endif
+                                @endif
+                            </div>
+
                         </div>
                     </div>
                 </section>

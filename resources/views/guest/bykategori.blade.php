@@ -21,20 +21,20 @@
                                     </div>
                                     <div class="post-content" style="text-align: left;">
                                         <h2 class="entry-title">
-                                            <a href="{{URL::to('berita').'/'.$b->id}}" class="judul">{{$b->title}}</a>
+                                            <a href="{{route('blog.show',$b->id)}}" class="judul">{{$b->title}}</a>
                                         </h2>
-    
+
                                         <div class="post-date" style="margin-top: -10px;">
                                             <p><a href="#" style="color: rgb(141, 108, 108); font-size: 13px;">{{date('d-M-Y', strtotime($b->created_at));}}</a></p>
                                         </div>
-    
+
                                         <div class="desc">
                                             <p style="text-align: justify;">{{Str::limit(strip_tags($b->desc),90,$end='...')}}</p>
-    
+
                                         </div>
                                         <small>
                                             <div class="mouse">
-                                            <a href="{{URL::to('kategori').'/'.$b->slug}}">{{$b->category}}</a>    
+                                            <a href="{{route('kategori',$b->category->slug)}}">{{$b->category->name}}</a>
                                             </div>
                                         </small>
                                     </div>
@@ -43,9 +43,9 @@
                                 <p>artikel yang anda inginkan tidak tersedia</p>
                                 @endforelse
 
-                                
+
                                 {{ $data->links('pagination::bootstrap-4') }}
-                                
+
                             </div>
 
                 </div>
@@ -61,11 +61,11 @@
                                         <h3 class="white"> Berita Terbaru </h3>
                                     </div>
                                     <div class="widget-popular-post-main">
-                                        
 
-                                        
+
+
                                         @foreach ($latest as $n)
-                                           
+
                                             <div class="widget-posts" style="margin-bottom: 12px;">
                                                 <div class="post-thumb">
                                                     <img src="{{asset('/images/informations/').'/'.$n->img}}" alt="....."
@@ -76,7 +76,7 @@
                                                     <p style="margin-top: -10px; font-size: 13px;">{{date('d-M-Y', strtotime($n->created_at));}}</p>
                                                 </div>
                                             </div>
-                                            
+
                                         @endforeach
 
                                     </div>
@@ -90,8 +90,8 @@
                                 <div class="widget-category-main">
                                     <ul class="widget-category-list">
                                     @foreach($categories as $c)
-                                    <li><a href="{{URL::to('/kategori').'/'.$c->slug}}">{{$c->category}}</a></li>
-                                    @endforeach 
+                                    <li><a href="{{route('kategori',$c->slug)}}">{{$c->name}}</a></li>
+                                    @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -105,8 +105,8 @@
                                 <div class="widget-category-main">
                                     <ul class="widget-category-list">
                                         @foreach($product as $c)
-                                        <li><a href="{{URL::to('/kategori').'/'.$c->slug}}">{{$c->category}}</a></li>
-                                        @endforeach     
+                                        <li><a href="{{route('kategori',$c->slug)}}">{{$c->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

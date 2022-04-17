@@ -19,7 +19,7 @@
 
                 <!-- Input Style start -->
                 <section id="input-style">
-                    <form action="" method="post">
+                    <form action="{{ (empty($data)) ? route('categories.create') : route('categories.update',$data['id']) }}" method="post">
                         {{csrf_field()}}
                         @if(empty($data))
 
@@ -34,7 +34,7 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label class="mb-3" for="roundText">Kategori</label>
-                                                <input name="category_id" type="text" class="form-control" value="{{$data->category_id ?? ''}}" placeholder="kategori" required>
+                                                <input name="name" type="text" class="form-control" value="{{$data->name ?? ''}}" placeholder="kategori" required>
                                             </div>
                                         </div>
 
@@ -43,18 +43,18 @@
                                                 <label class="mb-3" for="roundText">Jenis</label>
                                                 <select class="form-control" name="kind" id="exampleFormControlSelect1">
                                                     @if(empty($data))
-                                                    @foreach($kind as $k)
-                                                    <option value="{{$k}}">{{$k}}</option>
-                                                    @endforeach
+                                                        @foreach($kind as $k)
+                                                        <option value="{{$k}}">{{$k}}</option>
+                                                        @endforeach
                                                     @else
-                                                    @foreach($kind as $k)
-                                                    @if($k== $data->kind)
-                                                    <option selected value="{{$k}}">{{$k}}</option>
-                                                    @else
-                                                    <option value="{{$k}}">{{$k}}</option>
+                                                        @foreach($kind as $k)
+                                                            @if($k == $data->kind)
+                                                            <option selected value="{{$k}}">{{$k}}</option>
+                                                            @else
+                                                            <option value="{{$k}}">{{$k}}</option>
 
-                                                    @endif
-                                                    @endforeach
+                                                            @endif
+                                                        @endforeach
                                                     @endif
                                                   </select>
                                             </div>

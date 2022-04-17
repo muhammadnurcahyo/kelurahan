@@ -43,7 +43,7 @@
                                         {{ ($data->currentpage()-1) * $data->perpage() + $key + 1 }}
                                         </td>
                                         <td>
-                                            {{$t->category}}
+                                            {{$t->name}}
                                         </td>
                                         <td>
                                             {{$t->slug}}
@@ -51,14 +51,14 @@
                                         <td>
                                             {{$t->kind}}
                                         </td>
-                                        
+
                                         <td>
                                             <a href="{{URL::to('/admin/categories/edit/').'/'.$t->id}}">
                                                 <button class="btn">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </button>
                                             </a>
-                                            
+
                                                 <form  action="{{URL::to('/admin/categories/delete/').'/'.$t->id}}" method="post">
                                                 {{@csrf_field()}}
                                                     <button class="btn" type="submit">
@@ -71,7 +71,23 @@
 
                                 </tbody>
                             </table>
-                            {{ $data->links('pagination::bootstrap-4') }}
+                            <div class="d-flex justify-content-between">
+                                <p class="d-none d-sm-inline-block m-0 text-muted ">
+                                    Showing {{ ( $data->currentpage()-1)*$data->perpage()+1}} to {{ $data->currentpage()*$data->perpage() }} from {{ $data->total() }}record
+
+                                </p>
+                                @if (!empty ($data->links()))
+                                    @if (!empty($filter))
+                                    <nav class="m-0">
+                                        {!! $data->appends($filter)->links() !!}
+                                    </nav>
+                                    @else
+                                    <nav class="m-0">
+                                        {!! $data->links() !!}
+                                    </nav>
+                                    @endif
+                                @endif
+                            </div>
                         </div>
                     </div>
 

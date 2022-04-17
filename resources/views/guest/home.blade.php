@@ -45,11 +45,11 @@
                                 @foreach($blogs as $b)
                                 <div class="blog-post_wrapper">
                                     <div class="blog-post-image">
-                                        <img src="{{asset('/images/informations/').'/'.$b->img}}" alt="image" class="img-responsive center-block post_img" />
+                                        <img src="{{ asset('/images/informations/').'/'.$b->img}}" alt="image" class="img-responsive center-block post_img" />
                                     </div>
                                     <div class="post-content" style="text-align: left;">
                                         <h2 class="entry-title">
-                                            <a href="{{URL::to('berita').'/'.$b->titleslug}}" class="judul">{{$b->title}}</a>
+                                            <a href="{{ route('blog.show',$b->slug) }}" class="judul">{{$b->title}}</a>
                                         </h2>
 
                                         <div class="post-date" style="margin-top: -10px;">
@@ -62,7 +62,7 @@
                                         </div>
                                         <small>
                                             <div class="mouse">
-                                                Kategori: <a href="{{URL::to('kategori').'/'.$b->slug}}">{{$b->category}}</a>
+                                                Kategori: <a href="{{route('kategori',$b->category->slug)}}">{{$b->category->name}}</a>
                                             </div>
                                         </small>
                                     </div>
@@ -112,7 +112,7 @@
                                 <div class="widget-category-main">
                                     <ul class="widget-category-list">
                                     @foreach($categories as $c)
-                                    <li><a href="{{URL::to('kategori').'/'.$c->slug}}">{{$c->category}}</a></li>
+                                    <li><a href="{{route('kategori',$c->slug)}}">{{$c->name}}</a></li>
                                     @endforeach
                                 </ul>
                                 </div>
