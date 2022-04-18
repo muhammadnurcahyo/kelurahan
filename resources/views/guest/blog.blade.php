@@ -13,6 +13,7 @@
                 <img src="{{asset('/images/informations/').'/'.$data->img}}" width="100%" alt="" id="brta">
                 <div class="blog_post_se1c">
                     {!! $data->desc !!}
+                    <div class="sharethis-inline-share-buttons" style="margin-bottom: 20px;"></div>
                     <blockquote>
 
                         <p style="font-style: italic;"><b>Baca juga</b>:</p>

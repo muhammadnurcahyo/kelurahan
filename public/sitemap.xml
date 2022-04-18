@@ -1,68 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>http://localhost:8000/berita</loc>
-        <lastmod>2022-04-12T15:33:13+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://localhost:8000/kontak</loc>
-        <lastmod>2022-04-12T15:33:13+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://localhost:8000/home</loc>
-        <lastmod>2022-04-12T15:33:13+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://localhost:8000/about/visi-misi</loc>
-        <lastmod>2022-04-12T15:33:14+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://localhost:8000/about/sejarah-desa</loc>
-        <lastmod>2022-04-12T15:33:14+00:00</lastmod>
+        <loc>http://localhost:8000/about/sejarah-bumdes</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>http://localhost:8000/about/struktur-organisasi</loc>
-        <lastmod>2022-04-12T15:33:14+00:00</lastmod>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://localhost:8000/about/sambutan-kepala-desa</loc>
-        <lastmod>2022-04-12T15:33:14+00:00</lastmod>
+        <loc>http://localhost:8000/about/visi-misi</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://localhost:8000/greeting/kepala-desa</loc>
-        <lastmod>2022-04-12T15:33:14+00:00</lastmod>
+        <loc>http://localhost:8000/berita</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://localhost:8000/greeting/direktur</loc>
-        <lastmod>2022-04-12T15:33:14+00:00</lastmod>
+        <loc>http://localhost:8000/berita/air-minum-dalam-kemasan-daxu</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://localhost:8000/kategori/coba</loc>
-        <lastmod>2022-04-12T15:33:14+00:00</lastmod>
+        <loc>http://localhost:8000/berita/bumkal-luhur-sembada-sidoluhur-serahkan-lpj-dan-proker-ke-dinas-pmk-sleman</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://localhost:8000/berita/coba2</loc>
-        <lastmod>2022-04-12T15:33:14+00:00</lastmod>
+        <loc>http://localhost:8000/berita/cobayaa</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/berita/himbauan-dari-direktur-bum-kalurahan-luhur-sembada-sidoluhur</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/berita/pupuk-npk-pelangi</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/berita/pupuk-organik-patigan</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/berita/pupuk-phoska</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/berita/pupuk-tsp-ladang-subur-36</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/berita/pupuk-urea-mestac</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/berita/pupuk-urea-petro</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/berita/unit-usaha-pengelolaan-sampah-pengambilan-sampah-kolektif</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/greeting/sambutan-direktur</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/greeting/sambutan-lurah</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/home</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/kategori/kegiatan-bumkal</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/kategori/kegiatan-yang-akan-datang</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/kategori/unit-usaha-jasa-boga</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/kategori/unit-usaha-pengelolaan-sampah</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/kategori/unit-usaha-perdagangan</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://localhost:8000/kontak</loc>
+        <lastmod>2022-04-18T18:28:58+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>

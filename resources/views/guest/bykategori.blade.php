@@ -21,7 +21,7 @@
                                     </div>
                                     <div class="post-content" style="text-align: left;">
                                         <h2 class="entry-title">
-                                            <a href="{{route('blog.show',$b->id)}}" class="judul">{{$b->title}}</a>
+                                            <a href="{{route('blog.show',$b->slug)}}" class="judul">{{$b->title}}</a>
                                         </h2>
 
                                         <div class="post-date" style="margin-top: -10px;">
@@ -34,7 +34,7 @@
                                         </div>
                                         <small>
                                             <div class="mouse">
-                                            <a href="{{route('kategori',$b->category->slug)}}">{{$b->category->name}}</a>
+                                                Kategori: <a href="{{route('kategori',$b->category->slug)}}"> {{$b->category->name}}</a>
                                             </div>
                                         </small>
                                     </div>
@@ -72,7 +72,7 @@
                                                         style="height:90px; width: 90px;">
                                                 </div>
                                                 <div class="post-title">
-                                                    <h5><a href="{{URL::to('berita').'/'.$n->id}}">{{$n->title}}</a></h5>
+                                                    <h5><a href="{{URL::to('berita').'/'.$n->slug}}">{{$n->title}}</a></h5>
                                                     <p style="margin-top: -10px; font-size: 13px;">{{date('d-M-Y', strtotime($n->created_at));}}</p>
                                                 </div>
                                             </div>

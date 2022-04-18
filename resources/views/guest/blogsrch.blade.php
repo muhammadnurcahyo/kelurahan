@@ -102,7 +102,7 @@
                                 <div class="widget-category-main">
                                     <ul class="widget-category-list">
                                         @foreach($product as $c)
-                                        <li><a href="sampah.html">{{$c->category}}</a></li>
+                                        <li><a href="{{route('kategori',$c->slug)}}">{{$c->name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

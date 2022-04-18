@@ -36,6 +36,7 @@
     <link href="{{URL::asset('/style/font-awesome.css')}}" rel="stylesheet" type="text/css">
 
     <link href="{{URL::asset('pict/css/fakeLoader.css')}}" rel="stylesheet" type="text/css">
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6178fa3351e92e0012f89af0&product=inline-share-buttons' async='async'></script>
 </head>
 
 
@@ -76,6 +77,9 @@
                                 <a class="dropdown-item " id="menuturun" href="{{URL::to('about').'/'.$a->slug}}">{{$a->name}}</a>
                                 </li>
                                 @endforeach
+                                <li>
+                                    <a class="dropdown-item " id="menuturun" href="/kategori/unit-usaha-perdagangan">Produk BUMDesa</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -101,10 +105,10 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="mt_footer_about">
-                            {{-- <h2 style="color: white;">{{$displays->name}}</h2>
-                            <p style="color: white; font-family: 'Times New Roman', Times, serif;">
+                            <h2 style="color: white;">{{$displays->name}}</h2>
+                            <p style="color: white; font-size:14px; text-align:justify;">
                             {{$displays->motto}}
-                            </p> --}}
+                            </p>
                         </div>
                     </div>
 
