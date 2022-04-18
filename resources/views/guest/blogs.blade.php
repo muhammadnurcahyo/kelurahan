@@ -11,7 +11,7 @@
                 <div class="col-md-9 col-sm-12 width70">
                     <h2 style="text-align: center; margin-top: 10px;"><a href="#" style="color: white;">BERITA</a>
                         <br><br>
-                        <h2 class="	d-none d-lg-flex oke"><a href="#">BERITA TERBARU</a> <br><br>
+                        <h2 class="	d-none d-lg-flex oke"><a href="#">Berita Terbaru Bumdes Luhur Sembada Hari Ini</a> <br><br>
                             <div class="blog_post_sec">
 
                             @foreach($blogs as $blog)
